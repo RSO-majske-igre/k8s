@@ -23,6 +23,16 @@ spec: # specification for deployment resource
             configMapKeyRef:
               name: mariadb-configmap
               key: database_url
+        - name: DATABASE_USERNAME
+          valueFrom:
+            secretKeyRef: 
+              name: mariadb 
+              key: DATABASE_USERNAME
+        - name: DATABASE_PASSWORD
+          valueFrom:
+            secretKeyRef: 
+              name: mariadb 
+              key: DATABASE_PASSWORD
 
 
 
