@@ -245,3 +245,5 @@ ls
 cd bizjak3/
 git
 git init
+git checkout .
+ls
