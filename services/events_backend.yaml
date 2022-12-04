@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: "events-backend"
+spec:
+  selector:
+    app: "events-backend"
+  ports:
+    - protocol: "TCP"
+      port: 8090
+      targetPort: 8090
+  type: LoadBalancer
+

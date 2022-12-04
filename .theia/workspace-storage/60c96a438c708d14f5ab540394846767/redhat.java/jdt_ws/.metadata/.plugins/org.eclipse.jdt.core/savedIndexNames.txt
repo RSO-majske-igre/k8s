@@ -1,0 +1,10 @@
+INDEX VERSION 1.131+/home/bizjak3/.theia/workspace-storage/60c96a438c708d14f5ab540394846767/redhat.java/jdt_ws/.metadata/.plugins/org.eclipse.jdt.core
+1865797976.index
+604672858.index
+2530946432.index
+2639144857.index
+5647528.index
+2363335548.index
+3842426239.index
+1895564144.index
+700810493.index

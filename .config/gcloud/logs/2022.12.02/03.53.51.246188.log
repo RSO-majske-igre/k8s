@@ -1,0 +1,24 @@
+2022-12-02 03:53:51,249 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'clusters']
+2022-12-02 03:53:51,251 DEBUG    root            Loaded Command Group: ['gcloud', 'container', 'clusters', 'get_credentials']
+2022-12-02 03:53:51,266 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/bizjak3@gmail.com/?recursive=true
+2022-12-02 03:53:51,269 DEBUG    urllib3.connectionpool Starting new HTTP connection (1): metadata.google.internal:80
+2022-12-02 03:53:51,272 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/bizjak3@gmail.com/?recursive=true HTTP/1.1" 200 None
+2022-12-02 03:53:51,273 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/bizjak3@gmail.com/token
+2022-12-02 03:53:51,275 DEBUG    urllib3.connectionpool Resetting dropped connection: metadata.google.internal
+2022-12-02 03:53:51,277 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/bizjak3@gmail.com/token HTTP/1.1" 200 None
+2022-12-02 03:53:51,288 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/bizjak3@gmail.com/?recursive=true
+2022-12-02 03:53:51,289 DEBUG    urllib3.connectionpool Starting new HTTP connection (1): metadata.google.internal:80
+2022-12-02 03:53:51,292 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/bizjak3@gmail.com/?recursive=true HTTP/1.1" 200 None
+2022-12-02 03:53:51,293 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/bizjak3@gmail.com/token
+2022-12-02 03:53:51,294 DEBUG    urllib3.connectionpool Resetting dropped connection: metadata.google.internal
+2022-12-02 03:53:51,297 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/bizjak3@gmail.com/token HTTP/1.1" 200 None
+2022-12-02 03:53:51,324 DEBUG    root            Running [gcloud.container.clusters.get-credentials] with arguments: [--project: "euphoric-coral-370400", --quiet: "True", --zone: "europe-west9-c", NAME: "testni"]
+2022-12-02 03:53:51,342 INFO     ___FILE_ONLY___ Fetching cluster endpoint and auth data.
+
+2022-12-02 03:53:51,345 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): container.googleapis.com:443
+2022-12-02 03:53:51,406 DEBUG    urllib3.connectionpool https://container.googleapis.com:443 "GET /v1/projects/euphoric-coral-370400/locations/europe-west9-c/clusters/testni?alt=json HTTP/1.1" 200 None
+2022-12-02 03:53:51,452 DEBUG    root            Saved kubeconfig to /home/bizjak3/.kube/config
+2022-12-02 03:53:51,453 INFO     ___FILE_ONLY___ kubeconfig entry generated for testni.
+
+2022-12-02 03:53:51,455 INFO     root            Display format: "default"
+2022-12-02 03:53:51,455 DEBUG    root            SDK update checks are disabled.
