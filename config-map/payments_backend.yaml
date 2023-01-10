@@ -1,0 +1,6 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: payments-backend-configmap
+data:
+  payments_backend_url: payments-backend
