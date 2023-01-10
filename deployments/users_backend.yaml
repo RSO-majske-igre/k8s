@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment # what to create?
 metadata:
-  name: payment-backend-deployment
+  name: users-backend-deployment
 spec: # specification for deployment resource
   replicas: 1 # how many replicas of pods we want to create
   selector:
     matchLabels:
-      app: payment-backend
+      app: users_backend
   template: # blueprint for pods
     metadata:
       labels:
-        app: payment-backend # service will look for this label
+        app: users_backend # service will look for this label
     spec: # specification for pods
       containers: # we can have one or more containers
-      - name: payment-backend
-        image: bizjak3/payments_backend:latest
+      - name: users-backend
+        image: bizjak3/users_backend:latest
         ports:
-        - containerPort: 8100
+        - containerPort: 8110
         env:
           - name: DATABASE_HOST
             valueFrom:

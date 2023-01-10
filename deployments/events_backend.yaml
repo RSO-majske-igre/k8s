@@ -18,21 +18,33 @@ spec: # specification for deployment resource
         ports:
         - containerPort: 8090
         env:
-        - name: DATABASE_HOST
-          valueFrom:
-            configMapKeyRef:
-              name: mariadb-configmap
-              key: database_url
-        - name: DATABASE_USERNAME
-          valueFrom:
-            secretKeyRef: 
-              name: mariadb 
-              key: DATABASE_USERNAME
-        - name: DATABASE_PASSWORD
-          valueFrom:
-            secretKeyRef: 
-              name: mariadb 
-              key: DATABASE_PASSWORD
-
-
-
+          - name: DATABASE_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: mariadb-configmap
+                key: database_url
+          - name: DATABASE_USERNAME
+            valueFrom:
+              secretKeyRef: 
+                name: mariadb 
+                key: DATABASE_USERNAME
+          - name: DATABASE_PASSWORD
+            valueFrom:
+              secretKeyRef: 
+                name: mariadb 
+                key: DATABASE_PASSWORD
+          - name: EVENTS_BACKEND
+            valueFrom:
+              configMapKeyRef:
+                name: events-backend-configmap
+                key: events_backend_url
+          - name: USERS_BACKEND
+            valueFrom:
+              configMapKeyRef:
+                name: users-backend-configmap
+                key: users_backend_url
+          - name: PAYMENTS_BACKEND
+            valueFrom:
+              configMapKeyRef:
+                name: payments-backend-configmap
+                key: payments_backend_url
