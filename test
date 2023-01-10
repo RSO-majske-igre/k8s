@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment # what to create?
+metadata:
+  name: events-backend-deployment
+spec: # specification for deployment resource
+  replicas: 1 # how many replicas of pods we want to create
+  selector:
+    matchLabels:
+      app: events-backend
+  template: # blueprint for pods
+    metadata:
+      labels:
+        app: events-backend # service will look for this label
+    spec: # specification for pods
+      containers: # we can have one or more containers
+      - name: events-backend
+        image: bizjak3/events_backend:latest
+        ports:
+        - containerPort: 8090
+        env:
+        - name: DATABASE_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: mariadb-configmap
+              key: database_url
+        - name: DATABASE_USERNAME
+          valueFrom:
+            secretKeyRef: 
+              name: mariadb 
+              key: DATABASE_USERNAME
+        - name: DATABASE_PASSWORD
+          valueFrom:
+            secretKeyRef: 
+              name: mariadb 
+              key: DATABASE_PASSWORD
+
+
