@@ -48,3 +48,8 @@ spec: # specification for deployment resource
               configMapKeyRef:
                 name: payments-backend-configmap
                 key: payments_backend_url
+          - name: CONFIG_BACKEND
+            valueFrom:
+              configMapKeyRef:
+                name: config-server-configmap
+                key: config_server_url

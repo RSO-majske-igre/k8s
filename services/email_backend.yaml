@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: "email-backend"
+spec:
+  selector:
+    app: "email-backend"
+  ports:
+    - protocol: "TCP"
+      port: 8120
+      targetPort: 8120
+  type: LoadBalancer
+
