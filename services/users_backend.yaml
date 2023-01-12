@@ -10,4 +10,3 @@ spec:
       port: 8110
       targetPort: 8110
   type: LoadBalancer
-

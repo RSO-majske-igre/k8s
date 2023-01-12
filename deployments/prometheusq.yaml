@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment # what to create?
+metadata:
+  name: prometheusq-deployment
+spec: # specification for deployment resource
+  replicas: 1 # how many replicas of pods we want to create
+  selector:
+    matchLabels:
+      app: prometheusq
+  template: # blueprint for pods
+    metadata:
+      labels:
+        app: prometheusq # service will look for this label
+    spec: # specification for pods
+      containers: # we can have one or more containers
+      - name: prometheus
+        image: prom/prometheus
+        ports:
+        - containerPort: 6969
+        env:
+          - name: /path/to/prometheus.yml
+          valueFrom:
+            configMapKeyRef:
+              name: mariadb-configmap
+              key: database_url
+          - v /path/to/prometheus.yml:/etc/prometheus/prometheus.yml
+

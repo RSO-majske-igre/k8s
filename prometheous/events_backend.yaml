@@ -1,0 +1,28 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  annotations:
+    meta.helm.sh/release-name: prometheus
+    meta.helm.sh/release-namespace: default
+  labels:
+    app.kubernetes.io/instance: prometheus
+    app.kubernetes.io/managed-by: me
+    app.kubernetes.io/name: events-backend
+  name: events-backend
+  namespace: default
+spec:
+  endpoints:
+    - honorLabels: true
+      path: /actuator/prometheus
+      port: http-web
+      scheme: http
+      scrapeTimeout: 30s
+  jobLabel: prometheus
+  namespaceSelector:
+    matchNames:
+    - default
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: events-backend
+
+      

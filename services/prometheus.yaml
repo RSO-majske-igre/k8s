@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: "prometheus"
+spec:
+  selector:
+    app: "prometheus"
+  ports:
+    - protocol: "TCP"
+      port: 6969
+      targetPort: 6969
+type: LoadBalancer
+

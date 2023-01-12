@@ -17,3 +17,4 @@ spec: # specification for deployment resource
         image: bizjak3/config_server:latest
         ports:
         - containerPort: 8888
+      

@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment # what to create?
 metadata:
-  name: events-backend-deployment
+  name: frontend-deployment
 spec: # specification for deployment resource
   replicas: 1 # how many replicas of pods we want to create
   selector:
     matchLabels:
-      app: events-backend
+      app: frontend
   template: # blueprint for pods
     metadata:
       labels:
-        app: events-backend # service will look for this label
+        app: frontend # service will look for this label
     spec: # specification for pods
       containers: # we can have one or more containers
-      - name: events-backend
-        image: bizjak3/events_backend:latest
+      - name: frontend
+        image: bizjak3/frontend:latest
         ports:
-        - containerPort: 8090
+        - containerPort: 80
         env:
           - name: DATABASE_HOST
             valueFrom:
@@ -58,3 +58,8 @@ spec: # specification for deployment resource
               configMapKeyRef:
                 name: spring-admin-configmap
                 key: spring_admin_url
+          - name: EMAIL_BACKEND
+            valueFrom:
+              configMapKeyRef:
+                name: email-backend-configmap
+                key: email_backend_url
