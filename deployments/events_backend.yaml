@@ -58,3 +58,8 @@ spec: # specification for deployment resource
               configMapKeyRef:
                 name: spring-admin-configmap
                 key: spring_admin_url
+          - name: EMAIL_BACKEND
+            valueFrom:
+              configMapKeyRef:
+                name: email-backend-configmap
+                key: email_backend_url
